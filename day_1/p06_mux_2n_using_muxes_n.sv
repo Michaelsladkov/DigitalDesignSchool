@@ -21,7 +21,10 @@ module mux_4_1
   // TODO
 
   // Implement mux_4_1 using three instances of mux_2_1
-
+  logic[3:0] out_a, out_b;
+  mux_2_1 mux_a (.d0(d0), .d1(d1), .sel(sel[0]), .y(out_a));
+  mux_2_1 mux_b (.d0(d2), .d1(d3), .sel(sel[0]), .y(out_b));
+  mux_2_1 mux_res (.d0(out_a), .d1(out_b), .sel(sel[1]), .y(y));
 
 endmodule
 

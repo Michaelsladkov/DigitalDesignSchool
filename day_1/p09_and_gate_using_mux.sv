@@ -22,7 +22,7 @@ module and_gate_using_mux
 
   // Implement and gate using instance(s) of mux,
   // constants 0 and 1, and wire connections
-
+  mux m(.d0(1'b0), .d1(b), .sel(a), .y(o));
 
 endmodule
 

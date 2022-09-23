@@ -11,7 +11,8 @@ module arithmetic_right_shift_of_N_by_S_using_concatenation
 # (parameter N = 8, S = 3)
 (input  [N - 1:0] a, output [N - 1:0] res);
 
-  // TODO
+  wire sign = a[N - 1];
+  assign res = {{S{sign}}, a[N - 1:S]};
 
 endmodule
 
@@ -20,6 +21,10 @@ module arithmetic_right_shift_of_N_by_S_using_for_inside_always
 (input  [N - 1:0] a, output logic [N - 1:0] res);
 
   // TODO
+  wire sign = a[N - 1];
+  always_comb
+    for (int i = N - 1; i >= 0; i--)
+      res[i] = i >= N - S ? sign : a[i + S];
 
 endmodule
 
@@ -28,6 +33,17 @@ module arithmetic_right_shift_of_N_by_S_using_for_inside_generate
 (input  [N - 1:0] a, output [N - 1:0] res);
 
   // TODO
+  wire sign = a[N - 1];
+
+  genvar i;
+
+  generate
+    for (i = N - 1; i >= 0; i --)
+      if (i >= N - S)
+        assign res [i] = sign;
+      else
+        assign res [i] = a [i + S];
+  endgenerate
 
 endmodule
 

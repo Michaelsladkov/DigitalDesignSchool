@@ -42,7 +42,11 @@ module signed_or_unsigned_mul
 );
 
   // TODO
-
+  wire signed [n - 1:0] signed_a = a;
+  wire signed [n - 1:0] signed_b = b;
+  wire [2 * n - 1:0] unsigned_res = a * b;
+  wire signed [2 * n - 1:0] signed_res = signed_a * signed_b;
+  assign res = sign ? signed_res : unsigned_res;
   // Implement a module that generates either signed or unsigned result
   // of the multiplication as requested by sign bit.
 

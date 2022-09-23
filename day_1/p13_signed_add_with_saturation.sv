@@ -21,8 +21,11 @@ module signed_add_with_saturation
   // Implement addition with saturation,
   // i.e. if the result does not fit
   // the maximum or minimum values should be used
-
-
+  wire [3:0] pre_sum = a + b;
+  wire overflow = (pre_sum[3] != (a[3] & b[3])) & (a[3] == b[3]);
+  wire [3:0] sum_helper = a[3] ? 4'b1000 : 4'b0111;
+  assign sum = overflow ? sum_helper : pre_sum;
+  
 endmodule
 
 //----------------------------------------------------------------------------
