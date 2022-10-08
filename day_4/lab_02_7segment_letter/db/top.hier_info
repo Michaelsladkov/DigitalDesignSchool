@@ -1,0 +1,39 @@
+|top
+clk => ~NO_FANOUT~
+reset_n => ~NO_FANOUT~
+key_sw[0] => Decoder0.IN3
+key_sw[0] => digit.DATAA
+key_sw[0] => Equal0.IN3
+key_sw[1] => Decoder0.IN2
+key_sw[1] => digit.DATAA
+key_sw[1] => Equal0.IN2
+key_sw[2] => Decoder0.IN1
+key_sw[2] => digit.DATAA
+key_sw[2] => Equal0.IN1
+key_sw[3] => Decoder0.IN0
+key_sw[3] => digit.DATAA
+key_sw[3] => Equal0.IN0
+led[0] <= <VCC>
+led[1] <= <VCC>
+led[2] <= <VCC>
+led[3] <= <VCC>
+abcdefgh[0] <= <VCC>
+abcdefgh[1] <= letter.DB_MAX_OUTPUT_PORT_TYPE
+abcdefgh[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+abcdefgh[3] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+abcdefgh[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+abcdefgh[5] <= letter.DB_MAX_OUTPUT_PORT_TYPE
+abcdefgh[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+abcdefgh[7] <= letter.DB_MAX_OUTPUT_PORT_TYPE
+digit[0] <= digit.DB_MAX_OUTPUT_PORT_TYPE
+digit[1] <= digit.DB_MAX_OUTPUT_PORT_TYPE
+digit[2] <= digit.DB_MAX_OUTPUT_PORT_TYPE
+digit[3] <= digit.DB_MAX_OUTPUT_PORT_TYPE
+buzzer <= <GND>
+hsync <= <VCC>
+vsync <= <VCC>
+rgb[0] <= <GND>
+rgb[1] <= <GND>
+rgb[2] <= <GND>
+
+

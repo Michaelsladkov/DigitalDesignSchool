@@ -1,0 +1,43 @@
+|top
+clk => cnt[0].CLK
+clk => cnt[1].CLK
+clk => cnt[2].CLK
+clk => cnt[3].CLK
+clk => keys_r[0].CLK
+clk => keys_r[1].CLK
+reset_n => cnt[0].ACLR
+reset_n => cnt[1].ACLR
+reset_n => cnt[2].ACLR
+reset_n => cnt[3].ACLR
+reset_n => keys_r[0].ACLR
+reset_n => keys_r[1].ACLR
+key_sw[0] => keys_r[0].DATAIN
+key_sw[0] => keys_pressed[0].IN1
+key_sw[1] => keys_r[1].DATAIN
+key_sw[1] => keys_pressed[1].IN1
+key_sw[2] => ~NO_FANOUT~
+key_sw[3] => ~NO_FANOUT~
+led[0] <= cnt[0].DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= cnt[1].DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= cnt[2].DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= cnt[3].DB_MAX_OUTPUT_PORT_TYPE
+abcdefgh[0] <= <VCC>
+abcdefgh[1] <= <VCC>
+abcdefgh[2] <= <VCC>
+abcdefgh[3] <= <VCC>
+abcdefgh[4] <= <VCC>
+abcdefgh[5] <= <VCC>
+abcdefgh[6] <= <VCC>
+abcdefgh[7] <= <VCC>
+digit[0] <= <VCC>
+digit[1] <= <VCC>
+digit[2] <= <VCC>
+digit[3] <= <VCC>
+buzzer <= <GND>
+hsync <= <VCC>
+vsync <= <VCC>
+rgb[0] <= <GND>
+rgb[1] <= <GND>
+rgb[2] <= <GND>
+
+

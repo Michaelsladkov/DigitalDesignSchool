@@ -35,19 +35,19 @@ module top
       else
         cnt <= cnt + 32'b1;
 
-    wire enable = (cnt [22:0] == 23'b0);
+    wire enable = (cnt [23:0] == 24'b0);
 
     //------------------------------------------------------------------------
 
-    logic [3:0] shift_reg;
+    logic [15:0] shift_reg;
     
     always_ff @ (posedge clk or posedge reset)
       if (reset)
-        shift_reg <= 4'b0001;
+        shift_reg <= 16'b0000000000001111;
       else if (enable)
-        shift_reg <= { shift_reg [0], shift_reg [3:1] };
+        shift_reg <= { shift_reg [0], shift_reg [15:1] };
 
-    assign led = ~ shift_reg;
+    assign led = ~ shift_reg[3:0];
 
     //------------------------------------------------------------------------
 
@@ -63,29 +63,43 @@ module top
     //
     //  0 means light
 
-    enum bit [7:0]
+    typedef enum bit [7:0]
     {
         A = 8'b00010001,
         B = 8'b11000001,
         C = 8'b01100011,
+	     H = 8'b10010001,
+        I = 8'b10011111,
         K = 8'b01010001,
-        U = 8'b10000011
+        L = 8'b11100011,
+		  O = 8'b00000011,
+        P = 8'b00110001,
+        S = 8'b01001001,
+        U = 8'b10000011,
+        EMPTY = 8'b11111111
     }
-    letter;
+    letters;
+	 
+	 letters letter;
+	 letter [15:0] line;
+	 assign line[0] = C;
+	 assign line[1] = O;
+	 assign line[2] = O;
+	 assign line[3] = L;
     
     always_comb
     begin
       case (shift_reg)
-      4'b1000: letter = A;
-      4'b0100: letter = U;
-      4'b0010: letter = C;
-      4'b0001: letter = A;
-      default: letter = K;
+      16'b0000000000001000: letter = C;
+      16'b0000000000000100: letter = O;
+      16'b0000000000000010: letter = O;
+      16'b0000000000000001: letter = L;
+      default: letter = EMPTY;
       endcase
     end
 
     assign abcdefgh = letter;
-    assign digit    = ~ shift_reg;
+    assign digit    = ~ shift_reg[3:0];
 
     // Exercise 1: Increase the frequency of enable signal
     // to the level your eyes see the letters as a solid word

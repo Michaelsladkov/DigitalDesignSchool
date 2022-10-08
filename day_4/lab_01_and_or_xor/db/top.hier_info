@@ -1,0 +1,37 @@
+|top
+clk => ~NO_FANOUT~
+reset_n => ~NO_FANOUT~
+key_sw[0] => led.IN0
+key_sw[0] => led.IN0
+key_sw[0] => led.IN0
+key_sw[0] => result.IN0
+key_sw[1] => led.IN1
+key_sw[1] => led.IN1
+key_sw[1] => led.IN1
+key_sw[1] => result.IN1
+key_sw[2] => ~NO_FANOUT~
+key_sw[3] => ~NO_FANOUT~
+led[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= led.DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= led.DB_MAX_OUTPUT_PORT_TYPE
+abcdefgh[0] <= <VCC>
+abcdefgh[1] <= <VCC>
+abcdefgh[2] <= <VCC>
+abcdefgh[3] <= <VCC>
+abcdefgh[4] <= <VCC>
+abcdefgh[5] <= <VCC>
+abcdefgh[6] <= <VCC>
+abcdefgh[7] <= <VCC>
+digit[0] <= <VCC>
+digit[1] <= <VCC>
+digit[2] <= <VCC>
+digit[3] <= <VCC>
+buzzer <= <GND>
+hsync <= <VCC>
+vsync <= <VCC>
+rgb[0] <= <GND>
+rgb[1] <= <GND>
+rgb[2] <= <GND>
+
+
