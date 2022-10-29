@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at top.sv(158): object "C" differs only in case from object "c" in the same scope File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_6/lab_01_note_recognition/top.sv Line: 158
+Info (10281): Verilog HDL Declaration information at top.sv(169): object "B" differs only in case from object "b" in the same scope File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_6/lab_01_note_recognition/top.sv Line: 169

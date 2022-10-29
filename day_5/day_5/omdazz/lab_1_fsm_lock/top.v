@@ -1,7 +1,7 @@
 module top
 # (
     parameter debounce_depth             = 8,
-              shift_strobe_width         = 23,
+              shift_strobe_width         = 26,
               seven_segment_strobe_width = 10
 )
 (

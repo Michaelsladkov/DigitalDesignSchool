@@ -1,0 +1,1019 @@
+Analysis & Synthesis report for top
+Sat Oct  8 14:56:54 2022
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top|moore_game_fsm:game_fsm|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |top
+ 13. Parameter Settings for User Entity Instance: sync_and_debounce:i_sync_and_debounce_key
+ 14. Parameter Settings for User Entity Instance: sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[0].i_sync_and_debounce_one
+ 15. Parameter Settings for User Entity Instance: sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[1].i_sync_and_debounce_one
+ 16. Parameter Settings for User Entity Instance: sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[2].i_sync_and_debounce_one
+ 17. Parameter Settings for User Entity Instance: sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[3].i_sync_and_debounce_one
+ 18. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe
+ 19. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe|counter:i_counter
+ 20. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe|counter:i_counter|register:i_reg
+ 21. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe0
+ 22. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe0|counter:i_counter
+ 23. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg
+ 24. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe1
+ 25. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe1|counter:i_counter
+ 26. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg
+ 27. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe2
+ 28. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe2|counter:i_counter
+ 29. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg
+ 30. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe3
+ 31. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe3|counter:i_counter
+ 32. Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg
+ 33. Parameter Settings for User Entity Instance: moore_game_fsm:game_fsm
+ 34. Parameter Settings for User Entity Instance: counter:i_num_counter0
+ 35. Parameter Settings for User Entity Instance: counter:i_num_counter0|register:i_reg
+ 36. Parameter Settings for User Entity Instance: counter:i_num_counter1
+ 37. Parameter Settings for User Entity Instance: counter:i_num_counter1|register:i_reg
+ 38. Parameter Settings for User Entity Instance: counter:i_num_counter2
+ 39. Parameter Settings for User Entity Instance: counter:i_num_counter2|register:i_reg
+ 40. Parameter Settings for User Entity Instance: counter:i_num_counter3
+ 41. Parameter Settings for User Entity Instance: counter:i_num_counter3|register:i_reg
+ 42. Parameter Settings for User Entity Instance: strobe_gen:i_seven_segment_strobe
+ 43. Parameter Settings for User Entity Instance: strobe_gen:i_seven_segment_strobe|counter:i_counter
+ 44. Parameter Settings for User Entity Instance: strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg
+ 45. Parameter Settings for User Entity Instance: seven_segment:i_seven_segment
+ 46. Parameter Settings for User Entity Instance: seven_segment:i_seven_segment|selector:i_sel_dig
+ 47. Parameter Settings for User Entity Instance: seven_segment:i_seven_segment|register_no_rst:i_abcdefg
+ 48. Parameter Settings for User Entity Instance: seven_segment:i_seven_segment|selector:i_sel_dot
+ 49. Parameter Settings for User Entity Instance: seven_segment:i_seven_segment|register_no_rst:i_dot
+ 50. Port Connectivity Checks: "strobe_gen:i_seven_segment_strobe|counter:i_counter"
+ 51. Port Connectivity Checks: "strobe_gen:i_num_strobe2|counter:i_counter"
+ 52. Port Connectivity Checks: "strobe_gen:i_num_strobe1|counter:i_counter"
+ 53. Port Connectivity Checks: "strobe_gen:i_num_strobe0|counter:i_counter"
+ 54. Port Connectivity Checks: "strobe_gen:i_num_strobe|counter:i_counter"
+ 55. Post-Synthesis Netlist Statistics for Top Partition
+ 56. Elapsed Time Per Partition
+ 57. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Oct  8 14:56:54 2022       ;
+; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                      ; top                                         ;
+; Top-level Entity Name              ; top                                         ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 239                                         ;
+;     Total combinational functions  ; 229                                         ;
+;     Dedicated logic registers      ; 107                                         ;
+; Total registers                    ; 107                                         ;
+; Total pins                         ; 28                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE10E22C8       ;                    ;
+; Top-level entity name                                            ; top                ; top                ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation              ; 4                  ;                    ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                         ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
+; ../top.v                         ; yes             ; User Verilog HDL File        ; C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v                ;         ;
+; moore_game_fsm.v                 ; yes             ; User Verilog HDL File        ; C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/run/moore_game_fsm.v ;         ;
+; sync_and_debounce.v              ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/sync_and_debounce.v                       ;         ;
+; config.vh                        ; yes             ; Auto-Found Unspecified File  ; C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/config.vh                           ;         ;
+; sync_and_debounce_one.v          ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/sync_and_debounce_one.v                   ;         ;
+; strobe_gen.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/strobe_gen.v                        ;         ;
+; counter.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/counter.v                           ;         ;
+; register.v                       ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/register.v                          ;         ;
+; seven_segment.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/seven_segment.v                           ;         ;
+; selector.v                       ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/selector.v                          ;         ;
+; register_no_rst.v                ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/register_no_rst.v                   ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 239       ;
+;                                             ;           ;
+; Total combinational functions               ; 229       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 60        ;
+;     -- 3 input functions                    ; 17        ;
+;     -- <=2 input functions                  ; 152       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 103       ;
+;     -- arithmetic mode                      ; 126       ;
+;                                             ;           ;
+; Total registers                             ; 107       ;
+;     -- Dedicated logic registers            ; 107       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 28        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 107       ;
+; Total fan-out                               ; 983       ;
+; Average fan-out                             ; 2.51      ;
++---------------------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                      ;
++--------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                                                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Entity Name           ; Library Name ;
++--------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; |top                                                                           ; 229 (10)            ; 107 (0)                   ; 0           ; 0            ; 0       ; 0         ; 28   ; 0            ; |top                                                                                                                  ; top                   ; work         ;
+;    |counter:i_num_counter0|                                                    ; 4 (0)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|counter:i_num_counter0                                                                                           ; counter               ; work         ;
+;       |register:i_reg|                                                         ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|counter:i_num_counter0|register:i_reg                                                                            ; register              ; work         ;
+;    |counter:i_num_counter1|                                                    ; 5 (0)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|counter:i_num_counter1                                                                                           ; counter               ; work         ;
+;       |register:i_reg|                                                         ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|counter:i_num_counter1|register:i_reg                                                                            ; register              ; work         ;
+;    |counter:i_num_counter2|                                                    ; 5 (0)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|counter:i_num_counter2                                                                                           ; counter               ; work         ;
+;       |register:i_reg|                                                         ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|counter:i_num_counter2|register:i_reg                                                                            ; register              ; work         ;
+;    |counter:i_num_counter3|                                                    ; 5 (0)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|counter:i_num_counter3                                                                                           ; counter               ; work         ;
+;       |register:i_reg|                                                         ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|counter:i_num_counter3|register:i_reg                                                                            ; register              ; work         ;
+;    |moore_game_fsm:game_fsm|                                                   ; 11 (11)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|moore_game_fsm:game_fsm                                                                                          ; moore_game_fsm        ; work         ;
+;    |seven_segment:i_seven_segment|                                             ; 24 (9)              ; 12 (4)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|seven_segment:i_seven_segment                                                                                    ; seven_segment         ; work         ;
+;       |register_no_rst:i_abcdefg|                                              ; 0 (0)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|seven_segment:i_seven_segment|register_no_rst:i_abcdefg                                                          ; register_no_rst       ; work         ;
+;       |register_no_rst:i_dot|                                                  ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|seven_segment:i_seven_segment|register_no_rst:i_dot                                                              ; register_no_rst       ; work         ;
+;       |selector:i_sel_dig|                                                     ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|seven_segment:i_seven_segment|selector:i_sel_dig                                                                 ; selector              ; work         ;
+;       |selector:i_sel_dot|                                                     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|seven_segment:i_seven_segment|selector:i_sel_dot                                                                 ; selector              ; work         ;
+;    |strobe_gen:i_num_strobe0|                                                  ; 25 (0)              ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe0                                                                                         ; strobe_gen            ; work         ;
+;       |counter:i_counter|                                                      ; 25 (0)              ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe0|counter:i_counter                                                                       ; counter               ; work         ;
+;          |register:i_reg|                                                      ; 25 (25)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg                                                        ; register              ; work         ;
+;    |strobe_gen:i_num_strobe1|                                                  ; 24 (0)              ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe1                                                                                         ; strobe_gen            ; work         ;
+;       |counter:i_counter|                                                      ; 24 (0)              ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe1|counter:i_counter                                                                       ; counter               ; work         ;
+;          |register:i_reg|                                                      ; 24 (24)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg                                                        ; register              ; work         ;
+;    |strobe_gen:i_num_strobe2|                                                  ; 23 (0)              ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe2                                                                                         ; strobe_gen            ; work         ;
+;       |counter:i_counter|                                                      ; 23 (0)              ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe2|counter:i_counter                                                                       ; counter               ; work         ;
+;          |register:i_reg|                                                      ; 23 (23)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg                                                        ; register              ; work         ;
+;    |strobe_gen:i_num_strobe3|                                                  ; 22 (0)              ; 13 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe3                                                                                         ; strobe_gen            ; work         ;
+;       |counter:i_counter|                                                      ; 22 (0)              ; 13 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe3|counter:i_counter                                                                       ; counter               ; work         ;
+;          |register:i_reg|                                                      ; 22 (22)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg                                                        ; register              ; work         ;
+;    |strobe_gen:i_num_strobe|                                                   ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_num_strobe                                                                                          ; strobe_gen            ; work         ;
+;    |strobe_gen:i_seven_segment_strobe|                                         ; 14 (4)              ; 10 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_seven_segment_strobe                                                                                ; strobe_gen            ; work         ;
+;       |counter:i_counter|                                                      ; 10 (0)              ; 10 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_seven_segment_strobe|counter:i_counter                                                              ; counter               ; work         ;
+;          |register:i_reg|                                                      ; 10 (10)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg                                               ; register              ; work         ;
+;    |sync_and_debounce:i_sync_and_debounce_key|                                 ; 52 (0)              ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sync_and_debounce:i_sync_and_debounce_key                                                                        ; sync_and_debounce     ; work         ;
+;       |sync_and_debounce_one:gen_sync_and_debounce[0].i_sync_and_debounce_one| ; 13 (13)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[0].i_sync_and_debounce_one ; sync_and_debounce_one ; work         ;
+;       |sync_and_debounce_one:gen_sync_and_debounce[1].i_sync_and_debounce_one| ; 13 (13)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[1].i_sync_and_debounce_one ; sync_and_debounce_one ; work         ;
+;       |sync_and_debounce_one:gen_sync_and_debounce[2].i_sync_and_debounce_one| ; 13 (13)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[2].i_sync_and_debounce_one ; sync_and_debounce_one ; work         ;
+;       |sync_and_debounce_one:gen_sync_and_debounce[3].i_sync_and_debounce_one| ; 13 (13)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[3].i_sync_and_debounce_one ; sync_and_debounce_one ; work         ;
++--------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------+
+; State Machine - |top|moore_game_fsm:game_fsm|state              ;
++----------+----------+----------+----------+----------+----------+
+; Name     ; state.S3 ; state.S2 ; state.S1 ; state.S0 ; state.S4 ;
++----------+----------+----------+----------+----------+----------+
+; state.S0 ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.S1 ; 0        ; 0        ; 1        ; 1        ; 0        ;
+; state.S2 ; 0        ; 1        ; 0        ; 1        ; 0        ;
+; state.S3 ; 1        ; 0        ; 0        ; 1        ; 0        ;
+; state.S4 ; 0        ; 0        ; 0        ; 1        ; 1        ;
++----------+----------+----------+----------+----------+----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                    ;
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------+
+; Register name                                                   ; Reason for Removal                                                                  ;
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------+
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[22]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[22]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[21]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[21]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[20]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[20]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[19]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[19]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[18]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[18]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[17]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[17]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[16]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[16]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[15]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[15]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[14]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[14]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[13]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[13]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[12]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[12]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[11]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[11]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[10]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[10]         ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[9]   ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[9]          ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[8]   ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[8]          ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[7]   ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[7]          ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[6]   ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[6]          ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[5]   ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[5]          ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[4]   ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[4]          ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[3]   ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[3]          ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[2]   ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[2]          ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[1]   ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[1]          ;
+; strobe_gen:i_num_strobe|counter:i_counter|register:i_reg|q[0]   ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[0]          ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[0]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[0] ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[0]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[0] ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[0]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[0] ;
+; strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[0]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[0] ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[1]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[1] ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[1]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[1] ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[1]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[1] ;
+; strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[1]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[1] ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[2]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[2]          ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[2]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[2]          ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[2]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[2]          ;
+; strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[2]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[2] ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[3]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[3]          ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[3]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[3]          ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[3]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[3]          ;
+; strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[3]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[3] ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[4]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[4]          ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[4]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[4]          ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[4]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[4]          ;
+; strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[4]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[4] ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[5]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[5]          ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[5]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[5]          ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[5]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[5]          ;
+; strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[5]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[5] ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[6]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[6]          ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[6]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[6]          ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[6]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[6]          ;
+; strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[6]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[6] ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[7]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[7]          ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[7]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[7]          ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[7]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[7]          ;
+; strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[7]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[7] ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[8]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[8]          ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[8]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[8]          ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[8]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[8]          ;
+; strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[8]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[8] ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[9]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[9]          ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[9]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[9]          ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[9]  ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[9]          ;
+; strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[9]  ; Merged with strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg|q[9] ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[10] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[10]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[10] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[10]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[10] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[10]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[11] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[11]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[11] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[11]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[11] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[11]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[12] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[12]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[12] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[12]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[12] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[12]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[13] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[13]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[13] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[13]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[13] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[13]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[14] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[14]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[14] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[14]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[14] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[14]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[15] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[15]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[15] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[15]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[15] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[15]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[16] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[16]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[16] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[16]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[16] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[16]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[17] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[17]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[17] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[17]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[17] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[17]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[18] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[18]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[18] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[18]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[18] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[18]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[19] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[19]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[19] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[19]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[19] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[19]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[20] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[20]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[20] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[20]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[20] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[20]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[21] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[21]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[21] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[21]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[21] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[21]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[22] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[22]         ;
+; strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[22] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[22]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[22] ; Merged with strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg|q[22]         ;
+; strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[23] ; Merged with strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[23]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[23] ; Merged with strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg|q[23]         ;
+; strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg|q[24] ; Merged with strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg|q[24]         ;
+; moore_game_fsm:game_fsm|state~7                                 ; Lost fanout                                                                         ;
+; moore_game_fsm:game_fsm|state~8                                 ; Lost fanout                                                                         ;
+; Total Number of Removed Registers = 107                         ;                                                                                     ;
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 107   ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 99    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 17    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; seven_segment:i_seven_segment|anodes_q[1] ; 7       ;
+; seven_segment:i_seven_segment|anodes_q[2] ; 7       ;
+; seven_segment:i_seven_segment|anodes_q[3] ; 7       ;
+; Total number of inverted registers = 3    ;         ;
++-------------------------------------------+---------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |top ;
++----------------------------+-------+--------------------------------+
+; Parameter Name             ; Value ; Type                           ;
++----------------------------+-------+--------------------------------+
+; debounce_depth             ; 8     ; Signed Integer                 ;
+; num_strobe_width           ; 23    ; Signed Integer                 ;
+; seven_segment_strobe_width ; 10    ; Signed Integer                 ;
++----------------------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sync_and_debounce:i_sync_and_debounce_key ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; w              ; 4     ; Signed Integer                                                ;
+; depth          ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[0].i_sync_and_debounce_one ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+; depth          ; 8     ; Signed Integer                                                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[1].i_sync_and_debounce_one ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+; depth          ; 8     ; Signed Integer                                                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[2].i_sync_and_debounce_one ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+; depth          ; 8     ; Signed Integer                                                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[3].i_sync_and_debounce_one ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+; depth          ; 8     ; Signed Integer                                                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; w              ; 23    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe|counter:i_counter ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; w              ; 23    ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe|counter:i_counter|register:i_reg ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; w              ; 23    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe0 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; w              ; 26    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe0|counter:i_counter ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; w              ; 26    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; w              ; 26    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe1 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; w              ; 25    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe1|counter:i_counter ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; w              ; 25    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; w              ; 25    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe2 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; w              ; 24    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe2|counter:i_counter ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; w              ; 24    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; w              ; 24    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe3 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; w              ; 23    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe3|counter:i_counter ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; w              ; 23    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_num_strobe3|counter:i_counter|register:i_reg ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; w              ; 23    ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: moore_game_fsm:game_fsm ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; S0             ; 000   ; Unsigned Binary                             ;
+; S1             ; 001   ; Unsigned Binary                             ;
+; S2             ; 010   ; Unsigned Binary                             ;
+; S3             ; 011   ; Unsigned Binary                             ;
+; S4             ; 100   ; Unsigned Binary                             ;
+; S5             ; 101   ; Unsigned Binary                             ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:i_num_counter0 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; w              ; 4     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:i_num_counter0|register:i_reg ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; w              ; 4     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:i_num_counter1 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; w              ; 4     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:i_num_counter1|register:i_reg ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; w              ; 4     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:i_num_counter2 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; w              ; 4     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:i_num_counter2|register:i_reg ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; w              ; 4     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:i_num_counter3 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; w              ; 4     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:i_num_counter3|register:i_reg ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; w              ; 4     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_seven_segment_strobe ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; w              ; 10    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_seven_segment_strobe|counter:i_counter ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; w              ; 10    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; w              ; 10    ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seven_segment:i_seven_segment ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; w              ; 16    ; Signed Integer                                    ;
+; bits_per_digit ; 4     ; Signed Integer                                    ;
+; n_digits       ; 4     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seven_segment:i_seven_segment|selector:i_sel_dig ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; w              ; 4     ; Signed Integer                                                       ;
+; n              ; 4     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seven_segment:i_seven_segment|register_no_rst:i_abcdefg ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; w              ; 7     ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seven_segment:i_seven_segment|selector:i_sel_dot ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; w              ; 1     ; Signed Integer                                                       ;
+; n              ; 4     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seven_segment:i_seven_segment|register_no_rst:i_dot ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; w              ; 1     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "strobe_gen:i_seven_segment_strobe|counter:i_counter" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "strobe_gen:i_num_strobe2|counter:i_counter" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "strobe_gen:i_num_strobe1|counter:i_counter" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "strobe_gen:i_num_strobe0|counter:i_counter" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "strobe_gen:i_num_strobe|counter:i_counter" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 28                          ;
+; cycloneiii_ff         ; 107                         ;
+;     CLR               ; 58                          ;
+;     CLR SCLR          ; 32                          ;
+;     ENA               ; 8                           ;
+;     ENA CLR           ; 9                           ;
+; cycloneiii_lcell_comb ; 235                         ;
+;     arith             ; 126                         ;
+;         2 data inputs ; 121                         ;
+;         3 data inputs ; 5                           ;
+;     normal            ; 109                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 20                          ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 60                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 2.70                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+    Info: Processing started: Sat Oct  8 14:56:36 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
+Info (20032): Parallel compilation is enabled and will use up to 4 processors
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/learndigitaldesign/dds/repo/digitaldesignschool/day_5/day_5/omdazz/lab_2_fsm_game/top.v
+    Info (12023): Found entity 1: top File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file moore_game_fsm.v
+    Info (12023): Found entity 1: moore_game_fsm File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/run/moore_game_fsm.v Line: 1
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (12125): Using design file /users/user/learndigitaldesign/dds/repo/digitaldesignschool/day_5/common/sync_and_debounce.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: sync_and_debounce File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/sync_and_debounce.v Line: 3
+Info (12128): Elaborating entity "sync_and_debounce" for hierarchy "sync_and_debounce:i_sync_and_debounce_key" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 39
+Warning (12125): Using design file /users/user/learndigitaldesign/dds/repo/digitaldesignschool/day_5/common/sync_and_debounce_one.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: sync_and_debounce_one File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/sync_and_debounce_one.v Line: 3
+Info (12128): Elaborating entity "sync_and_debounce_one" for hierarchy "sync_and_debounce:i_sync_and_debounce_key|sync_and_debounce_one:gen_sync_and_debounce[0].i_sync_and_debounce_one" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/sync_and_debounce.v Line: 28
+Warning (12125): Using design file /users/user/learndigitaldesign/dds/repo/digitaldesignschool/day_5/day_5/common/strobe_gen.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: strobe_gen File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/strobe_gen.v Line: 3
+Info (12128): Elaborating entity "strobe_gen" for hierarchy "strobe_gen:i_num_strobe" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 58
+Warning (12125): Using design file /users/user/learndigitaldesign/dds/repo/digitaldesignschool/day_5/day_5/common/counter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: counter File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/counter.v Line: 5
+Info (12128): Elaborating entity "counter" for hierarchy "strobe_gen:i_num_strobe|counter:i_counter" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/strobe_gen.v Line: 15
+Warning (12125): Using design file /users/user/learndigitaldesign/dds/repo/digitaldesignschool/day_5/day_5/common/register.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: register File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/register.v Line: 3
+Info (12128): Elaborating entity "register" for hierarchy "strobe_gen:i_num_strobe|counter:i_counter|register:i_reg" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/counter.v Line: 19
+Info (12128): Elaborating entity "strobe_gen" for hierarchy "strobe_gen:i_num_strobe0" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 61
+Info (12128): Elaborating entity "counter" for hierarchy "strobe_gen:i_num_strobe0|counter:i_counter" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/strobe_gen.v Line: 15
+Info (12128): Elaborating entity "register" for hierarchy "strobe_gen:i_num_strobe0|counter:i_counter|register:i_reg" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/counter.v Line: 19
+Info (12128): Elaborating entity "strobe_gen" for hierarchy "strobe_gen:i_num_strobe1" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 63
+Info (12128): Elaborating entity "counter" for hierarchy "strobe_gen:i_num_strobe1|counter:i_counter" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/strobe_gen.v Line: 15
+Info (12128): Elaborating entity "register" for hierarchy "strobe_gen:i_num_strobe1|counter:i_counter|register:i_reg" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/counter.v Line: 19
+Info (12128): Elaborating entity "strobe_gen" for hierarchy "strobe_gen:i_num_strobe2" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 65
+Info (12128): Elaborating entity "counter" for hierarchy "strobe_gen:i_num_strobe2|counter:i_counter" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/strobe_gen.v Line: 15
+Info (12128): Elaborating entity "register" for hierarchy "strobe_gen:i_num_strobe2|counter:i_counter|register:i_reg" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/counter.v Line: 19
+Info (12128): Elaborating entity "moore_game_fsm" for hierarchy "moore_game_fsm:game_fsm" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 71
+Info (12128): Elaborating entity "counter" for hierarchy "counter:i_num_counter0" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 91
+Info (12128): Elaborating entity "register" for hierarchy "counter:i_num_counter0|register:i_reg" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/counter.v Line: 19
+Info (12128): Elaborating entity "strobe_gen" for hierarchy "strobe_gen:i_seven_segment_strobe" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 133
+Info (12128): Elaborating entity "counter" for hierarchy "strobe_gen:i_seven_segment_strobe|counter:i_counter" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/strobe_gen.v Line: 15
+Info (12128): Elaborating entity "register" for hierarchy "strobe_gen:i_seven_segment_strobe|counter:i_counter|register:i_reg" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/counter.v Line: 19
+Warning (12125): Using design file /users/user/learndigitaldesign/dds/repo/digitaldesignschool/day_5/common/seven_segment.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: seven_segment File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/seven_segment.v Line: 3
+Info (12128): Elaborating entity "seven_segment" for hierarchy "seven_segment:i_seven_segment" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 146
+Warning (12125): Using design file /users/user/learndigitaldesign/dds/repo/digitaldesignschool/day_5/day_5/common/selector.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: selector File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/selector.v Line: 3
+Info (12128): Elaborating entity "selector" for hierarchy "seven_segment:i_seven_segment|selector:i_sel_dig" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/seven_segment.v Line: 63
+Warning (12125): Using design file /users/user/learndigitaldesign/dds/repo/digitaldesignschool/day_5/day_5/common/register_no_rst.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: register_no_rst File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/common/register_no_rst.v Line: 3
+Info (12128): Elaborating entity "register_no_rst" for hierarchy "seven_segment:i_seven_segment|register_no_rst:i_abcdefg" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/seven_segment.v Line: 71
+Info (12128): Elaborating entity "selector" for hierarchy "seven_segment:i_seven_segment|selector:i_sel_dot" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/seven_segment.v Line: 78
+Info (12128): Elaborating entity "register_no_rst" for hierarchy "seven_segment:i_seven_segment|register_no_rst:i_dot" File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/seven_segment.v Line: 86
+Info (13000): Registers with preset signals will power-up high File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/common/seven_segment.v Line: 53
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led[2]" is stuck at VCC File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 12
+    Warning (13410): Pin "led[3]" is stuck at VCC File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 12
+    Warning (13410): Pin "buzzer" is stuck at GND File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 17
+    Warning (13410): Pin "hsync" is stuck at VCC File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 19
+    Warning (13410): Pin "vsync" is stuck at VCC File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 20
+    Warning (13410): Pin "rgb[0]" is stuck at GND File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 22
+    Warning (13410): Pin "rgb[1]" is stuck at GND File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 22
+    Warning (13410): Pin "rgb[2]" is stuck at GND File: C:/Users/User/learnDigitalDesign/DDS/repo/DigitalDesignSchool/day_5/day_5/omdazz/lab_2_fsm_game/top.v Line: 22
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 267 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 239 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 4766 megabytes
+    Info: Processing ended: Sat Oct  8 14:56:54 2022
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:35
+
+

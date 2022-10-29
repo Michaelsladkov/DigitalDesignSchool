@@ -25,7 +25,6 @@ module top
     assign hsync  = 1'b1;
     assign vsync  = 1'b1;
     assign rgb    = 3'b0;
-    assign led    = 4'b0;
     
     //------------------------------------------------------------------------
 
@@ -49,14 +48,32 @@ module top
     wire num_strobe1;
     wire num_strobe2;
     wire num_strobe3;
+	 
+	 wire num_strobe0_src;
+    wire num_strobe1_src;
+    wire num_strobe2_src;
+    wire num_strobe3_src;
 
     strobe_gen # (.w (num_strobe_width)) i_num_strobe
         (clk, reset, num_strobe);
+		  
+    strobe_gen # (.w (num_strobe_width+3)) i_num_strobe0
+        (clk, reset, num_strobe0_src);
+	 strobe_gen # (.w (num_strobe_width+2)) i_num_strobe1
+        (clk, reset, num_strobe1_src);
+	 strobe_gen # (.w (num_strobe_width+1)) i_num_strobe2
+        (clk, reset, num_strobe2_src);
+	 strobe_gen # (.w (num_strobe_width)) i_num_strobe3
+        (clk, reset, num_strobe3_src);
+		  
+	 wire [3:0] enables;
+	 
+	 moore_game_fsm game_fsm (clk, reset, key_db, num_strobe, enables);
 
-    assign num_strobe0 = num_strobe & key_sw[0];
-    assign num_strobe1 = num_strobe & key_sw[1];
-    assign num_strobe2 = num_strobe & key_sw[2];
-    assign num_strobe3 = num_strobe & key_sw[3];
+    assign num_strobe0 = num_strobe0_src & enables [0];
+    assign num_strobe1 = num_strobe1_src & enables [1];
+    assign num_strobe2 = num_strobe2_src & enables [2];
+    assign num_strobe3 = num_strobe3_src & enables [3];
 
     //------------------------------------------------------------------------
 
@@ -125,6 +142,21 @@ module top
         .abcdefg ( abcdefgh [7:1]       ),
         .dot     ( abcdefgh [0]         ),
         .anodes  ( digit                )
+		  
     );
+	 
+	 //-----------------------------------------------------------------
+	 wire endgame;
+	 assign endgame = (enables == 0);
+	 wire win;
+	 assign win = endgame & 
+	 ((num_count0) == 15 &
+	  (num_count1) == 4  &
+	  (num_count2) == 6  &
+	  (num_count3) == 7
+	 );
+	 assign led [3:2] = 2'b11;
+	 assign led [1] = endgame;
+	 assign led [0] = ~win;
 
 endmodule

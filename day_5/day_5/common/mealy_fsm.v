@@ -9,9 +9,9 @@ module mealy_fsm
     output y
 );
 
-    parameter [0:0] S0 = 1'b0, S1 = 1'b1;
+    parameter [2:0] S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4;
 
-    reg state, next_state;
+    reg [2:0] state, next_state;
 
     // State register
 
@@ -28,15 +28,30 @@ module mealy_fsm
         
         S0:
             if (a)
-                next_state = S0;
-            else
                 next_state = S1;
+            else
+                next_state = S0;
 
         S1:
             if (a)
-                next_state = S0;
-            else
                 next_state = S1;
+            else
+                next_state = S2;
+		  S2:
+		      if (a)
+				    next_state = S3;
+				else
+				    next_state = S0;
+		  S3:
+		      if (a)
+				    next_state = S4;
+				else
+				    next_state = S2;
+		  S4:
+		      if (a)
+				    next_state = S1;
+				else
+				    next_state = S0;
 
         default:
 
@@ -46,6 +61,6 @@ module mealy_fsm
 
     // Output logic based on current state and inputs
 
-    assign y = (a & state == S1);
+    assign y = (~a & state == S4);
 
 endmodule

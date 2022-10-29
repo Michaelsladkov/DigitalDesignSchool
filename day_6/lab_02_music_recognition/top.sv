@@ -234,8 +234,8 @@ module top
  * Изменить набор мелодий. Закодировать свою мелодию
  */
 
-`define SONGS_123
-//`define SONGS_423
+//`define SONGS_123
+`define SONGS_456
 
 `ifdef SONGS_123
 
@@ -291,8 +291,8 @@ module top
             10: if ( t_note == Bf ) states [1] <= 11;
             11: if ( t_note == G  ) states [1] <= recognized;
             endcase
-
-`elsif SONGS_456
+`endif
+`ifdef SONGS_456
 
     // No 4. Fly away on the wings of wind
 
