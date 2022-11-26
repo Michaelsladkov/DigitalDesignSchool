@@ -52,7 +52,7 @@ ____
 ```Система проектирования OpenLane.  22.10.2022```
 + Ya.Disk с инструкциями и виртуальной машиной: https://disk.yandex.ru/d/fA1sQncc5wWfcw
 ____
-:black_square_button: -**day_8**: 
+:white_check_mark: -**day_8**: 
 ```Микроархитектура однотактового процессора SCHOOLRISCV. 29.10.2022```
 + Основной репозиторий SCHOOLRISCV: https://github.com/zhelnio/schoolRISCV
 + Требуется установка java jre/jdk 8 версии или новее для использования симулятора RARS.  
@@ -64,3 +64,33 @@ ____
 + win установщик Icarus 11.0: https://disk.yandex.ru/d/YF9rduGAVGioEA
 + На Ubuntu 22.04 : sudo apt install iverilog gtkwave.
 + Для работы с Makefile на Ubuntu: sudo apt install make
+___
+:white_check_mark: -**day_9**: 
+```Арбитры и разделение памяти между несколькими процессорными ядрами. 12.11.2022```
++ Занятие предполагает использование ОС Linux
++ На win: Есть готовая виртуальная машина с Quartus, ModelSim, VSCode и инструкции по установке: https://disk.yandex.ru/d/CFoJ0K1WMLTnIA
++ На Linux: Необходимо установить ModelSim, VSCode с расширением TerosHDL.
++ Установщик ModelSim последней версии : https://disk.yandex.ru/d/zuN-mJTungHEDg
+    * Для корректной работы ModelSim необходимо установить следующие библиотеки:
+
+        ```bash
+        sudo dpkg --add-architecture i386
+        sudo apt update
+        sudo apt-get --yes install libc6:i386 libncurses5:i386 libxtst6:i386 libxft2:i386 libc6:i386 libncurses5:i386 libstdc++6:i386
+        ```
+    * Запуск установки в папке с дистрибутивом .run производится так:
+
+        ```bash
+        sudo chmod +x ./*.run
+        ./*.run
+        ```
++ VsCode можно скачать с оф.сайта: https://code.visualstudio.com/
+___
+:white_check_mark: -**day_10**: 
+```Операции с плавающей точкой. Буферы FIFO. 19.11.2022```
+___
+:black_square_button: -**day_11**: 
+```Конвейерные процессоры. 26.11.2022```
+
+
+
